@@ -39,11 +39,19 @@ export default defineManifest({
         "img/logo.png",
         "img/logo.png",
       ],
-      matches: [],
+      matches: ["https://*/*", "http://*/*"],
     },
   ],
-  permissions: ["sidePanel", "storage"],
-  chrome_url_overrides: {
-    newtab: "newtab.html",
-  },
+  permissions: [
+    "desktopCapture",
+    "activeTab",
+    "storage",
+    "sidePanel",
+    "offscreen",
+    "tabCapture",
+    "tabs",
+  ],
+  // chrome_url_overrides: {
+  //   newtab: "newtab.html",
+  // },
 });

@@ -40,8 +40,13 @@ function createOverlay() {
 }
 function startRecording() {
   console.log("Recording started!");
+  chrome.runtime.sendMessage({
+    action: "contentScriptMessage",
+    data: "Hello from content script!",
+  });
+
+  removeOverlay();
   // You may want to send a message to the background script to handle recording logic
-  // chrome.runtime.sendMessage({ action: 'startRecording' });
 }
 function removeOverlay() {
   const overlay = document.querySelector("#snap-overlay");

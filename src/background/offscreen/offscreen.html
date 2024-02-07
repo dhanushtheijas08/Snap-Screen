@@ -1,0 +1,20 @@
+<!-- offscreen.html -->
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Offscreen Document</title>
+  </head>
+  <body>
+    <!-- Your offscreen document content goes here -->
+
+    <script>
+      // Listen for messages from the background script
+      chrome.runtime.onMessage.addListener((message, sender) => {
+        console.log("Message received in offscreen.html:", message);
+      });
+    </script>
+  </body>
+</html>
